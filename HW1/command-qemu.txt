@@ -1,0 +1,27 @@
+
+To create VM:
+qemu-system-aarch64 \
+-accel hvf -cpu cortex-a57 -M virt,highmem=off -m 2G \
+-smp 2 \
+-drive file=/opt/homebrew/Cellar/qemu/7.1.0/share/qemu/edk2-aarch64-code.fd,if=pflash,format=raw,readonly=on \
+-drive if=none,file=ubuntu.img,format=qcow2,id=hd0 \
+-device virtio-blk-device,drive=hd0,serial="trial_2" \
+-device virtio-net-device,netdev=net0 \
+-netdev user,id=net0 \
+-vga none -device ramfb \
+-cdrom /Users/ashokkumarrangababu/Downloads/ubuntu-20.04.5-live-server-arm64.iso \
+-device usb-ehci -device usb-kbd -device usb-mouse -usb -nographic
+
+
+To Run:
+
+qemu-system-aarch64 \
+-accel hvf -cpu cortex-a57 -M virt,highmem=off -m 2G \
+-smp 2 \
+-drive file=/opt/homebrew/Cellar/qemu/7.1.0/share/qemu/edk2-aarch64-code.fd,if=pflash,format=raw,readonly=on \
+-drive if=none,file=ubuntu.img,format=qcow2,id=hd0 \
+-device virtio-blk-device,drive=hd0,serial="trial_2" \
+-device virtio-net-device,netdev=net0 \
+-netdev user,id=net0 \
+-vga none -device ramfb \
+-device usb-ehci -device usb-kbd -device usb-mouse -usb -nographic
