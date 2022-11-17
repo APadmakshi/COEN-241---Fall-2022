@@ -80,7 +80,7 @@ The ping between h1 and h2 is less because of seller no.of switches between them
 Ans 3.
 
 Ans 3a. 
-IPERF is a tool to mesure network performance and tuning.It supports tuning of various parameters like timing, buffers and protocols. 
+IPERF is a tool to mesure network performance and tuning.It supports tuning of various parameters like timing, buffers and protocols. It measures the throughput between any two nodes in a network line.
 
 Ans 3b. 
 mininet> iperf h1 h2
